@@ -3,7 +3,7 @@ const Navbar = () => {
     const [openTopMenu, setopenTopMenu] = useState(false)
     return (
         <div className="relative">
-            <div className='flex items-center justify-between xl:px-32 px-16'>
+            <div className='flex items-center justify-between xl:px-32 sm:px-16 px-8'>
                 <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
                 <div className="lg:flex items-center gap-5 hidden ">
                     <p className="text-[rgba(238, 0, 3, 1)] text-2xl font-semibold flex items-center justify-center flex-col group text-[#EE0003] cursor-pointer"><span className='group-hover:text-[#EE0003]'>Home</span>
@@ -25,7 +25,7 @@ const Navbar = () => {
                 }} />
             </div>
             <div className={`absolute w-full bg-white z-[9999] ${openTopMenu ? 'top-0' : '-top-[1000px]'}`}>
-                <div className='flex items-center justify-between xl:px-32 px-16 pb-5 border-b'>
+                <div className='flex items-center justify-between xl:px-32 sm:px-16 px-8 pb-5 border-b'>
                     <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
 
                     <img src="./cross.svg" className='cursor-pointer' alt="cross" onClick={() => setopenTopMenu(!openTopMenu)} />
