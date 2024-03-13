@@ -231,16 +231,16 @@ const Home = () => {
                         <button className='lg:flex items-center gap-4 hidden rounded-full p-2 pr-4 border-2 border-[#F33F41] text-[#F33F41] text-lg tracking-widest'><img src="./btn_paly.svg" alt="" className='w-10 h-10' /> <span className="">Watch video</span></button>
                     </div>
                 </div>
-                <div className="relative flex-1 bg-no-repeat bg-contain bg-left sm:min-h-[28.125rem] min-h-[20.125rem]" style={{ backgroundImage: 'url(./backgrond_winners.png)' }}>
-                    <div className="flex items-center gap-3 absolute lg:left-[50%] sm:left-[40%] left-[200px] w-fit z-10  px-4 py-2 rounded-xl bg-[#f8f8f85b] border-[#0003] sm:text-xl text-sm top-[15%] shadow-2xl"><span className="">User Name</span>🎉 </div>
-                    <div className="flex items-center justify-end flex-col text-sm gap-1 sm:scale-100 scale-75 absolute left-0 w-28 h-40 rounded-xl  z-10  p-2 bg-[#f9f9f9] lg:bottom-[15%] sm:bottom-[10%] bottom-0" style={{ clipPath: 'polygon(0 14%, 100% 0%, 100% 100%, 0 100%)' }} >
+                <div className="relative flex-1 bg-no-repeat bg-contain lg:bg-left bg-center sm:min-h-[28.125rem] min-h-[20.125rem]" style={{ backgroundImage: 'url(./backgrond_winners.png)' }}>
+                    <div className="flex items-center gap-3 absolute lg:left-[50%] left-[60%] w-fit z-10  px-4 py-2 rounded-xl bg-[#f8f8f85b] border-[#0003] sm:text-xl text-sm top-[15%] shadow-2xl"><span className="">User Name</span>🎉 </div>
+                    <div className="flex items-center justify-end flex-col text-sm gap-1 sm:scale-100 scale-75 absolute lg:left-0 md:left-[15%] left-[7%] w-28 h-40 rounded-xl  z-10  p-2 bg-[#f9f9f9] lg:bottom-[15%] sm:bottom-[10%] bottom-0" style={{ clipPath: 'polygon(0 14%, 100% 0%, 100% 100%, 0 100%)' }} >
                         <img src="./user_img.png" alt="" className="w-10 h-10 rounded-full object-contain drop-shadow-2xl" />
                         <h6 className="text-[#3B3B3B]">Fresh fruit</h6>
                         <hr className="w-1/4 border-b-[#F33F41] border-b-2" />
                         <h4 className="font-bold">$55.00</h4>
                         <p className="text-[#949494]">Free Shopping</p>
                     </div>
-                    <div className="flex sm:items-center justify-end sm:flex-row flex-col text-sm sm:gap-3 pr-3 absolute shadow-xl rounded-xl  w-fit lg:left-[50%] sm:left-[40%] left-[200px] z-10  p-2 bg-[#ffffff] bottom-1/4">
+                    <div className="flex sm:items-center justify-end sm:flex-row flex-col text-sm sm:gap-3 pr-3 absolute shadow-xl rounded-xl  w-fit lg:left-[50%] left-[60%] z-10  p-2 bg-[#ffffff] bottom-1/4">
                         <img src="./message.png" alt="" className="sm:w-10 sm:h-10 w-6 h-6 object-contain drop-shadow-2xl" />
                         <div className="">
                             <div className="relative bg-white rounded-full shadow-xl hidden sm:block">
@@ -253,7 +253,7 @@ const Home = () => {
                             <p className="flex items-center pl-3"> <span className=""><img src="./star.svg" className='w-4 h-4 mr-1 ' alt="" /></span><span className='text-[#F33F41] pl-1'>120 messages</span></p>
                         </div>
                     </div>
-                    <img src="user_img.png" alt="" className="sm:w-[20rem] w-[15rem] h-[15rem] sm:h-[20rem] rounded-b-full left-0 lg:top-0 -top-[1.875rem] translate-x-0 object-contain absolute " />
+                    <img src="user_img.png" alt="" className="sm:w-[20rem] w-[15rem] h-[15rem] sm:h-[20rem] rounded-b-full lg:left-0 left-1/2 lg:top-0 -top-[1.875rem] lg:translate-x-0 -translate-x-[60%] object-contain absolute " />
                 </div>
             </section>
             <section className='xl:px-32 sm:px-16 px-8'>
@@ -262,7 +262,7 @@ const Home = () => {
                     <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
                 </div>
                 {/* <div className="flex items-center justify-center gap-5 py-20"> */}
-                <div className="py-20">
+                <div className="py-10">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
