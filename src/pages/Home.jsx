@@ -21,7 +21,7 @@ const Home = () => {
         setFamilyCounter(prevCount => prevCount + 100); // Increment by 100
         setGroceryCounter(prevCount => prevCount + 200); // Increment by 200
         setDrawsCounter(prevCount => prevCount + 10); // Increment by 10
-        
+
     };
 
     // // Run the updateCounters function every second
@@ -138,36 +138,6 @@ const Home = () => {
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-medium bg-gradient-to-r from-[#F33F41] to-[#EFB635] inline-block text-transparent bg-clip-text">
                     Our privileged daily <span className='font-bold'>Family member</span>
                 </h1>
-                {/* <div className="flex items-center justify-center gap-6 mt-10">
-                    <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                        <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                        <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                            <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                            <h5 className="">Alberta</h5>
-                        </div>
-                    </div>
-                    <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                        <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                        <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                            <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                            <h5 className="">Alberta</h5>
-                        </div>
-                    </div>
-                    <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                        <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                        <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                            <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                            <h5 className="">Alberta</h5>
-                        </div>
-                    </div>
-                    <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                        <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                        <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                            <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                            <h5 className="">Alberta</h5>
-                        </div>
-                    </div>
-                </div> */}
                 <div className="">
                     <Swiper
                         slidesPerView={1}
@@ -314,107 +284,184 @@ const Home = () => {
                     <img src="user_img.png" alt="" className="sm:w-[20rem] w-[15rem] h-[15rem] sm:h-[20rem] rounded-b-full lg:left-0 left-1/2 lg:top-0 -top-[1.875rem] lg:translate-x-0 -translate-x-[60%] object-contain absolute " />
                 </div>
             </section>
-            <section className='xl:px-32 sm:px-16 px-8'>
-                <div className="flex items-center justify-between">
+            <section className="py-20 pb-10 flex items-center flex-col">
+                <div className="flex items-center justify-between xl:px-32 sm:px-16 px-8 w-full">
                     <h3 className="text-2xl sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">More <span className='font-bold'>winners</span></h3>
                     <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
                 </div>
-                {/* <div className="flex items-center justify-center gap-5 py-20"> */}
-                <div className="py-5 h-[25rem]">
+                <div className="overflow-x-hidden w-full px-[5vw]">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
-                        // loop={true}
-                        breakpoints={{
-                            '@0.00': {
-                                slidesPerView: 1,
-                                spaceBetween: 50,
-                            },
-                            '@0.75': {
-                                slidesPerView: 2,
-                                spaceBetween: 50,
-                            },
-                            '@1.00': {
-                                slidesPerView: 3,
-                                spaceBetween: 50,
-                            },
-                            '@1.50': {
-                                slidesPerView: 4,
-                                spaceBetween: 50,
-                            },
+                        loop={true}
+                        pagination={{
+                            clickable: true,
                         }}
+                        modules={[Pagination]}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 0,
+                            },
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 0,
+                            },
 
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 0,
+                            },
+
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 0,
+                            },
+                            1280: {
+                                slidesPerView: 5,
+                                spaceBetween: 0,
+                            }
+                        }}
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
-                                <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
-                                    <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
-                                    <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
-                                </div>
-                                <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
-                                    <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
-                                    <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                    <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
-                                <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
-                                    <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
-                                    <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
-                                </div>
-                                <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
-                                    <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
-                                    <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                    <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
-                                <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
-                                    <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
-                                    <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
-                                </div>
-                                <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
-                                    <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
-                                    <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                    <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
-                                <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
-                                    <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
-                                    <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
-                                </div>
-                                <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
-                                    <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
-                                    <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                    <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
-                                <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
-                                    <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
-                                    <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
-                                </div>
-                                <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
-                                    <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
-                                    <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                    <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </SwiperSlide>
-
+                        <SwiperSlide>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                                <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
+                                    <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
+                                        <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
+                                            <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
+                                            <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
+                                        </div>
+                                        <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
+                                            <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
+                                            <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
+                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
                     </Swiper>
                 </div>
-                {/* </div> */}
             </section>
             <section className='taste_section lg:block hidden'>
                 <div className="w-full px-10 h-[28.125rem] bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'linear-gradient( rgba(0,0,0,.8), rgba(0,0,0,.8)), url(./table_book_bg_img.png)' }}>
