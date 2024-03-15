@@ -2,7 +2,49 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='lg:px-28 sm:px-16 px-3 lg:py-14 sm:py-8 py-3 bg-[#7C7C7B]'>
+      <div className="bg-white rounded-3xl p-8">
+        <div className="grid xl:grid-cols-8 lg:grid-cols-5 grid-cols-1 gap-5">
+          <div className="space-y-8 xl:col-span-3 lg:col-span-2 col-span-1">
+            <img src="./nav_logo.png" alt="" className="w-24 h-16" />
+            <p className="">Join Mr. Corporation on this exciting journey, where innovation and community converge for a shopping experience like no other.</p>
+          </div>
+          <div className="space-y-8 lg:col-span-2 col-span-1">
+            <h4 className="font-bold text-2xl">
+              Sales
+            </h4>
+            <div className="space-y-2">
+              <p className="">sales@mrcorporation@mail.com</p>
+              <p className="">Mon –Fri 9AM – 6PM</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <img src="./tictock.svg" alt="" className='' />
+              <img src="./facebook.svg" alt="" className='' />
+              <img src="./insta.svg" alt="" className='' />
+              <img src="./youtube.svg" alt="" className='' />
+            </div>
+          </div>
+          <div className="space-y-8 lg:col-span-2 col-span-1 xl:pl-10 whitespace-nowrap">
+            <h4 className="font-bold text-2xl">
+              Calls
+            </h4>
+            <div className="space-y-2">
+              <p className="xl:text-xl font-semibold underline">+1 (672) 588-1590</p>
+              <p className="">Mon –Fri 9AM – 6PM</p>
+            </div>
+          </div>
+          <div className="space-y-8 xl:col-span-1 lg:col-span-3 col-span-1">
+            <h4 className="font-bold text-2xl whitespace-nowrap">
+              MR Apps
+            </h4>
+            <div className="flex flex-wrap gap-2 items-center">
+              <img src="./Play store.png" alt="" className='sm:w-36 w-28' />
+              <img src="./IOS.png" alt="" className='sm:w-36 w-28' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 
