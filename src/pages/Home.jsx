@@ -1,12 +1,69 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar'
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-
+// import required modules
+import { Pagination } from 'swiper/modules';
 import '../swiper.css';
+import Footer from '../components/Footer';
 const Home = () => {
+
+    // Define state variables for each counter
+    const [familyCounter, setFamilyCounter] = useState(0);
+    const [groceryCounter, setGroceryCounter] = useState(0);
+    const [drawsCounter, setDrawsCounter] = useState(0);
+
+    // Function to update counters
+    const updateCounters = () => {
+        // Increment each counter by a certain value
+        setFamilyCounter(prevCount => prevCount + 100); // Increment by 100
+        setGroceryCounter(prevCount => prevCount + 200); // Increment by 200
+        setDrawsCounter(prevCount => prevCount + 10); // Increment by 10
+        
+    };
+
+    // // Run the updateCounters function every second
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         updateCounters();
+    //     }, 10); // Run every 10 milliseconds 
+
+    //     // Clean up the interval when the component unmounts
+    //     return () => clearInterval(interval);
+    // }, []);
+
+
+    // Define your FAQ items as an array of objects
+    const faqsData = [
+        {
+            question: 'How does it work?',
+            answer: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+        },
+        {
+            question: 'What are the benefits?',
+            answer: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+        },
+        {
+            question: 'How many users can use it?',
+            answer: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+        },
+        {
+            question: 'Can i have custom pricing?',
+            answer: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+        },
+
+    ];
+
+    // Define state to track which FAQ item is currently expanded
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    // Function to toggle the active FAQ item
+    const toggleActiveIndex = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
     return (
         <div>
             <Navbar />
@@ -65,7 +122,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 flex items-center gap-4 flex-col justify-center top-1/2 -translate-y-full">
-                    <span className=""></span><img src="./facebook.svg" alt="" className="" /> <img src="./facebook.svg" alt="" className="" /> <img src="./facebook.svg" alt="" className="" /><span className=""></span></div>
+                    <span className=""></span><img src="./instagram-gold.svg" alt="" className="" /> <img src="./ticktok_gold.svg" alt="" className="" /> <img src="./youtube_gold.svg" alt="" className="" /> <img src="./facebook_gold.svg" alt="" className="" /><span className=""></span></div>
             </header>
             <div className="xl:px-32 sm:px-16 px-8 py-3 bg-[#F6F6F6] my-2 whitespace-nowrap">
                 <marquee>
@@ -140,50 +197,51 @@ const Home = () => {
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./Newfoundland.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Newfoundland</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./Northwest-Territories.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Northwest</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./Nunavut.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Nunavut</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./Ontario.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Ontario</h5>
+                            </div>
+                        </div></SwiperSlide>
+
+                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                <img src="./Edward-Island.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Edward</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./Brunswick.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">Brunswick</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
                             <img src="./Outer-image.png" alt="" className="w-full h-full" />
                             <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
-                            </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                                <img src="./British-columbia.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                <h5 className="">columbia</h5>
                             </div>
                         </div></SwiperSlide>
                         <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
@@ -200,17 +258,17 @@ const Home = () => {
             <section className='flex items-center justify-between md:flex-row flex-col'>
                 <div className="md:flex-1 w-full md:h-64 h-52 text-white flex items-center justify-center flex-col relative">
                     <img src="./Wine.png" className='absolute top-0 left-0 w-full h-full object-cover' alt="" />
-                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">60000+</h3>
+                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">{familyCounter}</h3>
                     <p className="z-10  lg:text-xl"> Our Family </p>
                 </div>
                 <div className="md:flex-1 w-full md:h-64 h-52 text-white flex items-center justify-center flex-col relative">
                     <img src="./Fruit.png" className='absolute top-0 left-0 w-full h-full object-cover' alt="" />
-                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">$5,00,000+</h3>
+                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">{groceryCounter}</h3>
                     <p className="z-10  lg:text-xl"> Grocery Gift </p>
                 </div>
                 <div className="md:flex-1 w-full md:h-64 h-52 text-white flex items-center justify-center flex-col relative">
                     <img src="./Vegetable.png" className='absolute top-0 left-0 w-full h-full object-cover' alt="" />
-                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">100+</h3>
+                    <h3 className="z-10 font-bold text-4xl lg:text-5xl">{drawsCounter}</h3>
                     <p className="z-10  lg:text-xl"> Draws </p>
                 </div>
             </section>
@@ -262,23 +320,23 @@ const Home = () => {
                     <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
                 </div>
                 {/* <div className="flex items-center justify-center gap-5 py-20"> */}
-                <div className="py-10">
+                <div className="py-5 h-[25rem]">
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={10}
-                        loop={true}
+                        // loop={true}
                         breakpoints={{
                             '@0.00': {
                                 slidesPerView: 1,
-                                spaceBetween: 10,
+                                spaceBetween: 50,
                             },
                             '@0.75': {
                                 slidesPerView: 2,
-                                spaceBetween: 20,
+                                spaceBetween: 50,
                             },
                             '@1.00': {
                                 slidesPerView: 3,
-                                spaceBetween: 40,
+                                spaceBetween: 50,
                             },
                             '@1.50': {
                                 slidesPerView: 4,
@@ -289,7 +347,7 @@ const Home = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
+                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
                                 <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
                                     <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
                                     <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
@@ -302,7 +360,7 @@ const Home = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
+                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
                                 <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
                                     <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
                                     <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
@@ -315,7 +373,7 @@ const Home = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
+                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
                                 <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
                                     <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
                                     <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
@@ -328,7 +386,7 @@ const Home = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
+                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
                                 <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
                                     <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
                                     <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
@@ -341,7 +399,7 @@ const Home = () => {
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="border-[#F33F41] group border rounded-[10px] relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
+                            <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-125 h-60 hover:h-64 p-1 transition-all">
                                 <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
                                     <img src="./line_polygon.png" alt="" className="w-full h-full object-contain" />
                                     <img src="user_img.png" alt="" className="w-[90%] h-[90%] top-0 object-contain absolute rounded-b-full" />
@@ -358,6 +416,362 @@ const Home = () => {
                 </div>
                 {/* </div> */}
             </section>
+            <section className='taste_section lg:block hidden'>
+                <div className="w-full px-10 h-[28.125rem] bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'linear-gradient( rgba(0,0,0,.8), rgba(0,0,0,.8)), url(./table_book_bg_img.png)' }}>
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={0}
+                        loop={true}
+                        pagination={{
+                            clickable: false,
+                        }}
+                        modules={[Pagination]}
+
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className="flex items-start gap-20 w-full h-full">
+                                <div className="flex-[2] flex-col flex items-center gap-10 pl-10">
+                                    <img src="./zaika.png" alt="" />
+                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                </div>
+                                <div className="flex-[4] flex items-center justify-center h-full">
+                                    <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-start gap-20 w-full h-full">
+                                <div className="flex-[2] flex-col flex items-center gap-10">
+                                    <img src="./zaika.png" alt="" />
+                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                </div>
+                                <div className="flex-[4] flex items-center justify-center h-full">
+                                    <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-start gap-20 w-full h-full">
+                                <div className="flex-[2] flex-col flex items-center gap-10">
+                                    <img src="./zaika.png" alt="" />
+                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                </div>
+                                <div className="flex-[4] flex items-center justify-center h-full">
+                                    <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-start gap-20 w-full h-full">
+                                <div className="flex-[2] flex-col flex items-center gap-10">
+                                    <img src="./zaika.png" alt="" />
+                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                </div>
+                                <div className="flex-[4] flex items-center justify-center h-full">
+                                    <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-start gap-20 w-full h-full">
+                                <div className="flex-[2] flex-col flex items-center gap-10">
+                                    <img src="./zaika.png" alt="" />
+                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                </div>
+                                <div className="flex-[4] flex items-center justify-center h-full">
+                                    <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+
+                </div>
+            </section>
+            <section className="lg:pt-20 pb-10 flex items-center flex-col">
+                <h2 className="text-2xl xl:px-32 sm:px-16 px-8 sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text text-center">Join our <span className="font-bold">Social media accounts</span></h2>
+                <div className="overflow-x-hidden w-full lg:px-[5vw]">
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Pagination]}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 0,
+                            },
+
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 0,
+                            },
+
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 0,
+                            }
+                        }}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className="w-[100vw] sm:w-[50vw] lg:w-[30vw] ">
+                                <div className=" px-3 lg:px-5 w-full">
+                                    <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
+                                        <img src="./facebook (2).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
+                                        <div className="text-center space-y-3">
+                                            <h3 className="text-2xl font-semibold text-gray-800">Facebook</h3>
+                                            <p className="">(14K followers)</p>
+                                            <p className="">Follow our official Facebook account for insights and updates</p>
+                                        </div>
+                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
+                                <div className=" px-3 lg:px-5 w-full">
+                                    <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
+                                        <img src="./tiktok (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
+                                        <div className="text-center space-y-3">
+                                            <h3 className="text-2xl font-semibold text-gray-800">Tiktok</h3>
+                                            <p className="">(14K followers)</p>
+                                            <p className="">Follow our official Tiktok account for insights and updates</p>
+                                        </div>
+                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
+                                <div className=" px-3 lg:px-5 w-full">
+                                    <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
+                                        <img src="./instagram (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
+                                        <div className="text-center space-y-3">
+                                            <h3 className="text-2xl font-semibold text-gray-800">Instagram</h3>
+                                            <p className="">(14K followers)</p>
+                                            <p className="">Follow our official Instagram account for insights and updates</p>
+                                        </div>
+                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
+                                <div className=" px-3 lg:px-5 w-full">
+                                    <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
+                                        <img src="./tiktok (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
+                                        <div className="text-center space-y-3">
+                                            <h3 className="text-2xl font-semibold text-gray-800">Tiktok</h3>
+                                            <p className="">(14K followers)</p>
+                                            <p className="">Follow our official Tiktok account for insights and updates</p>
+                                        </div>
+                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+            </section>
+            <section className='p-10 bg-[#F5F5F5] flex items-center justify-center gap-10 flex-col lg:flex-row lg:text-left text-center'>
+                <img src="./Partner.png" alt="" className="flex-[2] w-[300px] md:w-fit" />
+                <div className="flex-[3] sm:space-y-7 space-y-4">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">Become <span className="font-bold"> a  Partner</span></h3>
+                    <p className="text-[#686868] md:text-xl sm:text-base text-sm leading-[1.6] pb-5">At MR Corporation, we forge powerful partnerships for mutual growth. Join us to unlock a world of opportunities, connecting your grocery store with our savvy deal-seeking community. Elevate your business with us</p>
+                    <button className='rounded-full p-2 px-8 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Apply Now</button>
+                </div>
+            </section>
+            <section className='md:py-10 px-10 py-5 bg-[#F5F5F5] text-center'>
+                <h3 className="text-2xl sm:text-3xl md:text-left text-center md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text"><span className="font-bold">Why Partner </span>with us?</h3>
+                <div className="flex items-stretch justify-center lg:flex-row flex-col lg:divide-x divide-y lg:divide-y-0 divide-black md:py-16 py-8">
+                    <div className="flex-1 lg:py-4 px-4 py-8 flex items-center justify-start gap-5 flex-col">
+                        <img src="./target_person.png" alt="" className="" />
+                        <h4 className="sm:text-2xl text-lg bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">Expand Your Customer Base</h4>
+                        <p className="text-[#686868] md:text-xl sm:text-base text-sm leading-[1.6]">Reach a broader audience as <span className='font-semibold'>Mr Corporation</span>users actively seek quality grocery options and exclusive discounts.</p>
+                    </div>
+                    <div className="flex-1 lg:py-4 px-4 py-8 flex items-center justify-start gap-5 flex-col">
+                        <img src="./Visibility.png" alt="" className="" />
+                        <h4 className="sm:text-2xl text-lg bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">Boost Sales and Visibility </h4>
+                        <p className="text-[#686868] md:text-xl sm:text-base text-sm leading-[1.6]">Elevate your store's visibility and increase sales by featuring your products through our platform.</p>
+                    </div>
+                    <div className="flex-1 lg:py-4 px-4 py-8 flex items-center justify-start gap-5 flex-col">
+                        <img src="./loyalty.png" alt="" className="" />
+                        <h4 className="sm:text-2xl text-lg bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">Build Customer Loyalty </h4>
+                        <p className="text-[#686868] md:text-xl sm:text-base text-sm leading-[1.6]">Engage with our community and build lasting relationships with customers who value both quality and savings.</p>
+                    </div>
+                </div>
+            </section>
+            <section className="py-20 pb-10 flex items-center flex-col">
+                <h2 className="text-2xl xl:px-32 sm:px-16 px-8 sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text text-center">Grow Your Business, <span className="font-bold">Our Partner</span></h2>
+                <div className="overflow-x-hidden w-full px-[5vw]">
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={10}
+                        loop={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Pagination]}
+                        breakpoints={{
+                            0: {
+                                slidesPerView: 2,
+                                spaceBetween: 0,
+                            },
+                            640: {
+                                slidesPerView: 3,
+                                spaceBetween: 0,
+                            },
+
+                            768: {
+                                slidesPerView: 4,
+                                spaceBetween: 0,
+                            },
+
+                            1024: {
+                                slidesPerView: 5,
+                                spaceBetween: 0,
+                            }
+                        }}
+                        className="mySwiper"
+                    >
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#191919] w-28 h-28">
+                                    <img src="./Partner1.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#C9DF62] w-28 h-28">
+                                    <img src="./Partner2.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#83C85C] w-28 h-28">
+                                    <img src="./Partner3.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#F5D7D4] w-28 h-28">
+                                    <img src="./Partner4.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#B3E9A6] w-28 h-28">
+                                    <img src="./Partner5.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#191919] w-28 h-28">
+                                    <img src="./Partner1.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#C9DF62] w-28 h-28">
+                                    <img src="./Partner2.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className=" w-[45vw] sm:w-[30vw] md:w-[22.5vw]  lg:w-[18vw] flex items-center justify-center  ">
+                                <div className="flex items-center justify-center hover:scale-125 cursor-pointer transition-all rounded-full bg-[#83C85C] w-28 h-28">
+                                    <img src="./Partner3.png" alt="" className="w-24 object-contain" />
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+            </section>
+
+            <section className='xl:px-32 sm:px-16 lg:block hidden'>
+                <div className="  rounded-xl border flex items-center py-4 justify-center gap-5 divide-x">
+
+                    <div className="flex items-center gap-2 py-2 px-4">
+                        <img src="./UserEngagement.png" alt="" className='w-12 h-12' />
+                        <p className="">User Engagement</p>
+                    </div>
+                    <div className="flex items-center gap-2 py-2 px-4">
+                        <img src="./TargetedCampaigns.png" alt="" className='w-12 h-12' />
+                        <p className="">Targeted Campaigns</p>
+                    </div>
+                    <div className="flex items-center gap-2 py-2 px-4">
+                        <img src="./NationwideExposure.png" alt="" className='w-12 h-12' />
+                        <p className="">Nationwide Exposure</p>
+                    </div>
+                    <div className="flex items-center gap-2 py-2 px-4">
+                        <img src="./Cost-Effective Advertising.png" alt="" className='w-12 h-12' />
+                        <p className="">Cost-Effective Advertising</p>
+                    </div>
+                </div>
+            </section>
+            <section className='p-10 flex items-center justify-center gap-10 flex-col lg:flex-row lg:text-left text-center'>
+                <img src="./Advertise_buss.png" alt="" className="flex-[2] w-[300px] md:w-[450px]" />
+                <div className="flex-[3] sm:space-y-7 space-y-4">
+                    <h3 className="bg-gradient-to-r from-[#F33F41] to-[#FEC93E] leading-[1.6] inline-block text-transparent bg-clip-text text-3xl"><span className="font-semibold text-3xl md:text-5xl ">Advertise Your Business with MR</span> – Affordable Promotion Across Canada!</h3>
+                    <div className="flex items-center justify-center lg:justify-start gap-10 whitespace-nowrap">
+                        <p className="w-7 text-left border-t-4 border-[#F33F41]">Banner <br /> Ad</p>
+                        <p className="w-7 text-left border-t-4 border-[#F33F41]">Video <br /> Ad</p>
+                        <p className="w-7 text-left border-t-4 border-[#F33F41]">Visiting card <br /> Ad</p>
+                    </div>
+                    <button className='rounded-full p-2 px-8 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
+                </div>
+            </section>
+            <section className=''>
+                <div className="w-full min-h-[31.25rem] bg-no-repeat bg-cover bg-center xl:p-20 p-10 space-y-10" style={{ backgroundImage: 'url(./get_started_bg.png)' }}>
+                    <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-white leading-[1.4]">How to Get Started <br />
+                        <span className='font-normal'>Unlock the Potential – Advertise with MR Today!</span></h2>
+                    <p className='rounded-md p-2 px-8 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white xl:text-2xl md:text-lg sm:text-base text-sm  flex items-center justify-between w-fit md:gap-5 gap-3 flex-wrap'>
+                        <li className='list-item'>Contact MR Advertising Team</li>
+                        <li className='list-item'>Budget-Friendly Packages</li>
+                        <li className='list-item'>Track Performance</li>
+                    </p>
+                    <div className="w-full flex items-center justify-center">
+                        <button className='rounded-full p-2 px-8 bg-white text-[#F33F41] sm:text-lg text-sm font-semibold m-auto'>Start Now</button>
+                    </div>
+                </div>
+                <div className="relative xl:px-20 px-10  drop-shadow-xl w-full -top-20">
+                    <img src="./Vector.png" alt="" className="absolute w-96 right-0 top-1/3 -z-10" />
+                    <div className="p-10 bg-gradient-to-b from-[#ffffffd5] to-[#ffffffda] backdrop-blur-sm backdrop-filter  rounded-[2.5rem]">
+                        <h3 className="text-2xl sm:text-3xl text-center md:text-5xl text-[#F33F41] font-bold w-full">FAQs</h3>
+                        <div className="faqs divide-y   ">
+                            {faqsData.map((faq, index) => (
+                                <div key={index} className="faq-item">
+                                    <div className="faq-question flex items-center justify-between w-full cursor-pointer" onClick={() => toggleActiveIndex(index)}>
+                                        <h4 className="text-xl font-medium leading-[1.4] w-full py-5">{faq.question}</h4>
+                                        {activeIndex === index ? <span>&#9650;</span> : <span>&#9660;</span>}
+                                    </div>
+
+                                    {activeIndex === index && (
+                                        <div className="faq-answer pb-5">
+                                            <p>{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <Footer />
         </div>
     )
 }
