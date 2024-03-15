@@ -284,7 +284,7 @@ const Home = () => {
                     <img src="user_img.png" alt="" className="sm:w-[20rem] w-[15rem] h-[15rem] sm:h-[20rem] rounded-b-full lg:left-0 left-1/2 lg:top-0 -top-[1.875rem] lg:translate-x-0 -translate-x-[60%] object-contain absolute " />
                 </div>
             </section>
-            <section className="py-20 pb-10 flex items-center flex-col">
+            <section className="p-10 pt-0 flex items-center flex-col">
                 <div className="flex items-center justify-between xl:px-32 sm:px-16 px-8 w-full">
                     <h3 className="text-2xl sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">More <span className='font-bold'>winners</span></h3>
                     <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
