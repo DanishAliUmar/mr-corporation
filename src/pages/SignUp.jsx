@@ -136,12 +136,14 @@ const SignUp = () => {
             }
             <div className="flex items-center gap-3">
               <input type="checkbox" />
-              <p className="text-gray-700">Yes, I agreee to the <span className="text-blue-600">Terms & conditions</span> and <span className="text-blue-600">Privacy Policy</span> </p>
+              <p className="text-gray-700 text-left">Yes, I agreee to the <span className="text-blue-600">Terms & conditions</span> and <span className="text-blue-600">Privacy Policy</span> </p>
             </div>
-            <button type='submit' className={`rounded-full bg-gradient-to-r hover:bg-gradient-to-l hover:scale-105 from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold transition-all p-3 px-16 sm:!w-fit !w-full`} onClick={() => {
+            {/* <button type='submit' className={`rounded-full bg-gradient-to-r hover:bg-gradient-to-l hover:scale-105 from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold transition-all p-3 px-16 sm:!w-fit !w-full`} onClick={() => {
               navigate('/')
-            }}>Sign up</button>
-            {/* <Button text={'Sign up'} className={'p-3 px-16'} /> */}
+            }}>Sign up</button> */}
+            {/* <Link to={'/'}> */}
+              <Button text={'Sign up'} className={'p-3 px-16 sm:w-fit !w-full'} />
+            {/* </Link> */}
           </div>
           <h5 className="">Already have an account? <Link to={'/login'}><span className="font-bold text-[#F33F41] px-1">Log in</span></Link></h5>
         </div>
