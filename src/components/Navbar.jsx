@@ -11,7 +11,7 @@ const Navbar = () => {
                     <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
                 </NavLink>
                 <div className="lg:flex items-center gap-5 hidden ">
-                    <NavLink to="/" activeClassName>
+                    <NavLink to="/">
                         <p className="text-xl text-[rgba(238, 0, 3, 1)] group  text-2xl flex items-center justify-center flex-col cursor-pointer"><span className='group-hover:text-[#EE0003]'>Home</span>
                             <span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span>
                         </p>
