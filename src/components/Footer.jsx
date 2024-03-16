@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='lg:px-28 sm:px-16 px-3 lg:py-14 sm:py-8 py-3 bg-[#7C7C7B]'>
       <div className="bg-white rounded-3xl p-8">
-        <div className="grid xl:grid-cols-8 lg:grid-cols-5 grid-cols-1 gap-5">
+        <div className="grid xl:grid-cols-8 lg:grid-cols-5 grid-cols-1 gap-5 border-b border-black pb-8">
           <div className="space-y-8 xl:col-span-3 lg:col-span-2 col-span-1">
             <img src="./nav_logo.png" alt="" className="w-24 h-16" />
             <p className="">Join Mr. Corporation on this exciting journey, where innovation and community converge for a shopping experience like no other.</p>
@@ -14,7 +14,7 @@ const Footer = () => {
               Sales
             </h4>
             <div className="space-y-2">
-              <p className="">sales@mrcorporation@mail.com</p>
+              <p className="font-medium">sales@mrcorporation@mail.com</p>
               <p className="">Mon –Fri 9AM – 6PM</p>
             </div>
             <div className="flex items-center gap-3">
@@ -41,6 +41,16 @@ const Footer = () => {
               <img src="./Play store.png" alt="" className='sm:w-36 w-28' />
               <img src="./IOS.png" alt="" className='sm:w-36 w-28' />
             </div>
+          </div>
+        </div>
+        <div className="flex items-center justify-center flex-col gap-2 py-3">
+          <p className="text-black text-center">
+            Copyright © MR Corporation, 2023. All Rights Reserved.
+          </p>
+          <div className="flex items-center gap-5">
+            <img src="./paypal.png" alt="" className="" />
+            <img src="./masterCard.png" alt="" className="" />
+            <img src="./visa.png" alt="" className="" />
           </div>
         </div>
       </div>

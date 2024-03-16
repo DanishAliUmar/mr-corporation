@@ -1,23 +1,43 @@
 import React, { useState } from 'react'
+import { NavLink } from "react-router-dom";
+import Button from './Elements/Button';
+import Svg from './Elements/Svg';
 const Navbar = () => {
     const [openTopMenu, setopenTopMenu] = useState(false)
     return (
-        <div className="relative">
+        <div className="relative pb-3">
             <div className='flex items-center justify-between xl:px-32 sm:px-16 px-8'>
-                <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
+                <NavLink to="/">
+                    <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
+                </NavLink>
                 <div className="lg:flex items-center gap-5 hidden ">
-                    <p className="text-[rgba(238, 0, 3, 1)] text-2xl font-semibold flex items-center justify-center flex-col group text-[#EE0003] cursor-pointer"><span className='group-hover:text-[#EE0003]'>Home</span>
-                        <span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span>
-                    </p>
-                    <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>About</span> <span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
-                    <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Results</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
-                    <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Partners</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
-                    <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Contacts</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
+                    <NavLink to="/" activeClassName>
+                        <p className="text-xl text-[rgba(238, 0, 3, 1)] group  text-2xl flex items-center justify-center flex-col cursor-pointer"><span className='group-hover:text-[#EE0003]'>Home</span>
+                            <span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span>
+                        </p>
+                    </NavLink>
+                    <NavLink to="/about">
+                        <p className="text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>About</span> <span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
+                    </NavLink>
+                    <NavLink to="/results">
+                        <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Results</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
+                    </NavLink>
+                    <NavLink to="/partners">
+                        <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Partners</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
+                    </NavLink>
+                    <NavLink to="/contacts">
+                        <p className="text-[rgba(104, 104, 104, 1)] text-xl flex items-center justify-center flex-col group"><span className='group-hover:text-[#EE0003] cursor-pointer'>Contacts</span><span className="w-2 h-2 rounded-full bg-[#EE0003] opacity-0 group-hover:opacity-100"></span></p>
+                    </NavLink>
                 </div>
                 <div className="lg:flex items-center gap-5 hidden">
-                    <img src="./lang.svg" alt="img" className='cursor-pointer' />
-                    <img src="./wallet.svg" alt="img" className='cursor-pointer' />
-                    <button className='bg-gradient-to-r from-[#E84A4A] to-[#F7A738] px-8 py-2 rounded-full font-medium text-white cursor-pointer'>Login</button>
+                <Svg.Language className='cursor-pointer'/>
+                <Svg.Wallet className='cursor-pointer'/>
+                
+                    {/* <img src="./lang.svg" alt="img" className='cursor-pointer' /> */}
+                    {/* <img src="./wallet.svg" alt="img" className='cursor-pointer' /> */}
+                    <NavLink to="/login">
+                        <Button text={'Login'} className={' px-8 py-2 !font-medium !text-base'} />
+                    </NavLink>
                     <img src="./nav_img.png" alt="img" className='cursor-pointer' />
                 </div>
                 <img src="./hambar.svg" className='lg:hidden block cursor-pointer' alt="hambar" onClick={() => {

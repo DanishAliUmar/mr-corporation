@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
@@ -7,7 +6,8 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import '../swiper.css';
-import Footer from '../components/Footer';
+import Button from '../components/Elements/Button';
+import Svg from '../components/Elements/Svg';
 const Home = () => {
 
     // Define state variables for each counter
@@ -66,8 +66,7 @@ const Home = () => {
 
     return (
         <div>
-            <Navbar />
-            <header className=' xl:px-32 sm:px-16 px-8 pt-20 pb-10 relative'>
+            <header className=' xl:px-32 sm:px-16 px-8 drop-shadow-lg pt-20 pb-10 relative'>
                 <div className="flex items-center gap-5 flex-col lg:flex-row">
                     <div className="lg:flex-[4] space-y-2 sm:space-y-4 md:space-y-5 lg:text-left text-center">
                         <h3 className="text-[#686868] sm:text-2xl text-xl font-semibold">From Our Hearts to Your Home</h3>
@@ -76,8 +75,8 @@ const Home = () => {
                         </h1>
                         <h3 className="text-[#686868] text-2xl font-semibold">Daily Basis Grocery Gift </h3>
                         <div className="flex items-center lg:justify-start justify-center gap-4 sm:pt-7 pt-4">
-                            <button className='flex items-center lg:gap-8 gap-16 rounded-full p-2 pl-4 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-lg font-semibold '><span className="">Get Coupon</span> <span className="flex items-center justify-center lg:w-14 lg:h-14 sm:w-10 w-8 sm:h-10 h-8 bg-[#ffffff] rounded-full"> <img src="./btn_arrow.svg" alt="" /></span></button>
-                            <button className='lg:flex items-center gap-6 hidden rounded-full p-2 pr-4 border-2 border-[#F33F41] text-[#F33F41] text-lg tracking-widest'><img src="./btn_paly.svg" alt="" className='w-14 h-14' /> <span className="">Watch video</span></button>
+                            <button className='flex items-center lg:gap-8 gap-16 hover:scale-105 rounded-full p-2 pl-4 bg-gradient-to-r hover:bg-gradient-to-l from-[#F7A738] to-[#F33F41] transition-all text-white text-lg font-semibold '><span className="">Get Coupon</span> <span className="flex items-center justify-center lg:w-14 lg:h-14 sm:w-10 w-8 sm:h-10 h-8 bg-[#ffffff] rounded-full"><Svg.BtnArrow/> </span></button>
+                            <button className='lg:flex items-center gap-6 hidden hover:scale-105 transition-all rounded-full p-2 pr-4 border-2 border-[#F33F41] text-[#F33F41] text-lg tracking-widest'><Svg.PlayBtn  className='w-14 h-14' /> <span className="">Watch video</span></button>
                         </div>
                     </div>
                     <div className="lg:flex-[3] relative lg:py-0 sm:py-10 py-4">
@@ -97,7 +96,7 @@ const Home = () => {
                         </div>
                         <div className="text-[#686868] whitespace-nowrap">
                             <h6 className="">Our Happy Customers </h6>
-                            <p className="flex items-center"> <span className=""><img src="./star.svg" className='w-4 h-4 mr-1 ' alt="" /></span>4.5 <span className='text-[#F33F41] pl-1'>{" "}  ( 6.7 Review) </span></p>
+                            <p className="flex items-center"> <span className=""><Svg.Star className='w-4 h-4 mr-1 '/></span>4.5 <span className='text-[#F33F41] pl-1'>{" "}  ( 6.7 Review) </span></p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 lg:flex-row flex-col lg:justify-start justify-center">
@@ -122,105 +121,141 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="absolute left-5 flex items-center gap-4 flex-col justify-center top-1/2 -translate-y-full">
-                    <span className=""></span><img src="./instagram-gold.svg" alt="" className="" /> <img src="./ticktok_gold.svg" alt="" className="" /> <img src="./youtube_gold.svg" alt="" className="" /> <img src="./facebook_gold.svg" alt="" className="" /><span className=""></span></div>
+                    <span className="w-[2px] h-20 bg-[#D2BC81]"></span><Svg.InstagramGold className="hover:scale-110 cursor-pointer"/> <Svg.FacebookGold className="hover:scale-110 cursor-pointer"/><Svg.YoutubeGold className="hover:scale-110 cursor-pointer"/><Svg.TicktokGold className="hover:scale-110 cursor-pointer"/><span className="w-[2px] h-20 bg-[#D2BC81]"></span></div>
             </header>
             <div className="xl:px-32 sm:px-16 px-8 py-3 bg-[#F6F6F6] my-2 whitespace-nowrap">
                 <marquee>
                     <div className="flex items-center justify-start gap-20  w-full">
                         <h3 className="text-xl font-medium text-[#45A843]">Jack smith just bought  2 coupons(AB)</h3>
-                        <span className=""><img src="./star.svg" alt="" /></span>
+                        <span className=""><Svg.Star className=''/></span>
                         <h3 className="text-xl font-medium text-[#45A843]">Jack smith just bought  2 coupons(AB)</h3>
                     </div>
 
                 </marquee>
             </div>
-            <section className='py-10 xl:px-32 sm:px-16 px-8'>
-                <h1 className="text-2xl sm:text-3xl md:text-5xl font-medium bg-gradient-to-r from-[#F33F41] to-[#EFB635] inline-block text-transparent bg-clip-text">
+            <section className='py-10'>
+                <h1 className="text-2xl xl:px-32 sm:px-16 px-8 sm:text-3xl md:text-5xl font-medium bg-gradient-to-r from-[#F33F41] to-[#EFB635] inline-block text-transparent bg-clip-text">
                     Our privileged daily <span className='font-bold'>Family member</span>
                 </h1>
-                <div className="">
+                <div className="px-[5vw]">
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={10}
                         loop={true}
                         breakpoints={{
-                            '@0.00': {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                            },
-                            '@0.75': {
+                            0: {
                                 slidesPerView: 2,
-                                spaceBetween: 20,
+                                spaceBetween: 0,
                             },
-                            '@1.00': {
+                            640: {
                                 slidesPerView: 3,
-                                spaceBetween: 40,
+                                spaceBetween: 0,
                             },
-                            '@1.50': {
+
+                            768: {
                                 slidesPerView: 4,
-                                spaceBetween: 50,
+                                spaceBetween: 0,
                             },
+
+                            1024: {
+                                slidesPerView: 5,
+                                spaceBetween: 0,
+                            },
+                            1280: {
+                                slidesPerView: 6,
+                                spaceBetween: 0,
+                            }
                         }}
 
                         className="mySwiper winersSwiper"
                     >
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Newfoundland.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Newfoundland</h5>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Newfoundland.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Newfoundland</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Northwest-Territories.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Northwest</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Northwest-Territories.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Northwest</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Nunavut.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Nunavut</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Nunavut.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Nunavut</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Ontario.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Ontario</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Ontario.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Ontario</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
+                        </SwiperSlide>
 
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Edward-Island.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Edward</h5>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Edward-Island.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Edward</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Brunswick.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Brunswick</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Brunswick.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Brunswick</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./British-columbia.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">columbia</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./British-columbia.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">columbia</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
-                        <SwiperSlide><div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
-                            <img src="./Outer-image.png" alt="" className="w-full h-full" />
-                            <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
-                                <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
-                                <h5 className="">Alberta</h5>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="flex items-center justify-center xl:w-[15vw] lg:w-[18vw] md:w-[22.5vw] sm:w-[30vw] w-[45vw] ">
+                                <div className="w-44 h-[11.25rem] relative opacity-65 hover:scale-[1.3] hover:opacity-100 transition-all cursor-pointer">
+                                    <img src="./Outer-image.png" alt="" className="w-full h-full" />
+                                    <div className="flex items-center justify-between px-4 pt-4 pb-3 flex-col w-full h-full absolute top-0 left-0">
+                                        <img src="./Alberta.png" alt="" className='w-full h-2/3 rounded-lg' />
+                                        <h5 className="">Alberta</h5>
+                                    </div>
+                                </div>
                             </div>
-                        </div></SwiperSlide>
+                        </SwiperSlide>
 
                     </Swiper>
                 </div>
@@ -255,7 +290,7 @@ const Home = () => {
                     <p className="">"🎉<span className="font-semibold">Jack Smith Shines!</span>🌟
                         Secures a Year's Supply of Groceries with DailyDeals. Dive into the joy of <span className='font-semibold'>winning</span> as we unravel Jack's story and reveal the daily impact of DailyDeals on their life!</p>
                     <div className="flex items-stretch lg:justify-start justify-center gap-4">
-                        <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-lg font-semibold'>Check all Results</button>
+                        <Button text={'Check all Results'} className={'px-5 p-2'} />
                         <button className='lg:flex items-center gap-4 hidden rounded-full p-2 pr-4 border-2 border-[#F33F41] text-[#F33F41] text-lg tracking-widest'><img src="./btn_paly.svg" alt="" className='w-10 h-10' /> <span className="">Watch video</span></button>
                     </div>
                 </div>
@@ -284,15 +319,13 @@ const Home = () => {
                     <img src="user_img.png" alt="" className="sm:w-[20rem] w-[15rem] h-[15rem] sm:h-[20rem] rounded-b-full lg:left-0 left-1/2 lg:top-0 -top-[1.875rem] lg:translate-x-0 -translate-x-[60%] object-contain absolute " />
                 </div>
             </section>
-            <section className="p-10 pt-0 flex items-center flex-col">
+            <section className="pb-10 pt-0 flex items-center flex-col">
                 <div className="flex items-center justify-between xl:px-32 sm:px-16 px-8 w-full">
                     <h3 className="text-2xl sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">More <span className='font-bold'>winners</span></h3>
-                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
+                    <Button text={'View All'} className={'px-5 p-2'} />
                 </div>
                 <div className="overflow-x-hidden w-full px-[5vw]">
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={10}
                         loop={true}
                         pagination={{
                             clickable: true,
@@ -325,7 +358,7 @@ const Home = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -335,14 +368,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -352,14 +385,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -369,14 +402,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -386,14 +419,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -403,14 +436,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -420,14 +453,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -437,14 +470,14 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className=" w-[87vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
+                            <div className=" w-[90vw] sm:w-[45vw] md:w-[30vw]  lg:w-[22.5vw] xl:w-[18vw] flex items-center justify-center min-h-64 ">
                                 <div className="flex items-center justify-center cursor-pointer transition-all rounded-full">
                                     <div className="border-[#F33F41] group border rounded-[10px] cursor-pointer relative w-52 hover:scale-110 h-60 hover:h-64 p-1 transition-all">
                                         <div className="h-[60%] w-full relative overflow-hidden flex justify-center">
@@ -454,7 +487,7 @@ const Home = () => {
                                         <div className="bg-[#ffffffe1] shadow-xl max-h-[5.625rem] absolute top-[50%] rounded-xl w-[95%] left-1/2 -translate-x-1/2 p-2 text-center space-y-2">
                                             <h3 className="text-[#F33F41] font-semibold text-xl">WINNER 🎉</h3>
                                             <div className="font-semibold text-gray-500 flex items-center gap-2 justify-center"><span className="text-xs">Draw date</span> <span className="text-gray-600 font-medium text-sm">10-28-2023</span></div>
-                                            <button className='group-hover:rounded-full rounded-lg p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white text-sm font-semibold'>View details</button>
+                                            <Button text={'View details'} className={'!rounded-lg px-5 p-2 group-hover:!rounded-full !text-sm'} />
                                         </div>
                                     </div>
                                 </div>
@@ -480,7 +513,7 @@ const Home = () => {
                             <div className="flex items-start gap-20 w-full h-full">
                                 <div className="flex-[2] flex-col flex items-center gap-10 pl-10">
                                     <img src="./zaika.png" alt="" />
-                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                    <Button text={'Book your table Now'} className={'px-5 p-2'} />
                                 </div>
                                 <div className="flex-[4] flex items-center justify-center h-full">
                                     <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
@@ -491,7 +524,7 @@ const Home = () => {
                             <div className="flex items-start gap-20 w-full h-full">
                                 <div className="flex-[2] flex-col flex items-center gap-10">
                                     <img src="./zaika.png" alt="" />
-                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                    <Button text={'Book your table Now'} className={'px-5 p-2'} />
                                 </div>
                                 <div className="flex-[4] flex items-center justify-center h-full">
                                     <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
@@ -502,7 +535,7 @@ const Home = () => {
                             <div className="flex items-start gap-20 w-full h-full">
                                 <div className="flex-[2] flex-col flex items-center gap-10">
                                     <img src="./zaika.png" alt="" />
-                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                    <Button text={'Book your table Now'} className={'px-5 p-2'} />
                                 </div>
                                 <div className="flex-[4] flex items-center justify-center h-full">
                                     <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
@@ -513,7 +546,7 @@ const Home = () => {
                             <div className="flex items-start gap-20 w-full h-full">
                                 <div className="flex-[2] flex-col flex items-center gap-10">
                                     <img src="./zaika.png" alt="" />
-                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                    <Button text={'Book your table Now'} className={'px-5 p-2'} />
                                 </div>
                                 <div className="flex-[4] flex items-center justify-center h-full">
                                     <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
@@ -524,7 +557,7 @@ const Home = () => {
                             <div className="flex items-start gap-20 w-full h-full">
                                 <div className="flex-[2] flex-col flex items-center gap-10">
                                     <img src="./zaika.png" alt="" />
-                                    <button className='rounded-full p-2 px-5 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Book your table Now</button>
+                                    <Button text={'Book your table Now'} className={'px-5 p-2'} />
                                 </div>
                                 <div className="flex-[4] flex items-center justify-center h-full">
                                     <h2 className="text-5xl text-white leading-[1.5]">"Zaika: Embark on a Culinary Journey with the Taste of India!"</h2>
@@ -537,10 +570,8 @@ const Home = () => {
             </section>
             <section className="lg:pt-20 pb-10 flex items-center flex-col">
                 <h2 className="text-2xl xl:px-32 sm:px-16 px-8 sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text text-center">Join our <span className="font-bold">Social media accounts</span></h2>
-                <div className="overflow-x-hidden w-full lg:px-[5vw]">
+                <div className="overflow-x-hidden w-full px-[5vw]">
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={10}
                         loop={true}
                         pagination={{
                             clickable: true,
@@ -565,8 +596,8 @@ const Home = () => {
                         className="mySwiper"
                     >
                         <SwiperSlide>
-                            <div className="w-[100vw] sm:w-[50vw] lg:w-[30vw] ">
-                                <div className=" px-3 lg:px-5 w-full">
+                            <div className="w-[90vw] sm:w-[45vw] flex items-center justify-center lg:w-[30vw] ">
+                                <div className="w-11/12">
                                     <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
                                         <img src="./facebook (2).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
                                         <div className="text-center space-y-3">
@@ -574,14 +605,14 @@ const Home = () => {
                                             <p className="">(14K followers)</p>
                                             <p className="">Follow our official Facebook account for insights and updates</p>
                                         </div>
-                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                        <Button text={'Follow'} className={'p-2 px-10'} />
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
-                                <div className=" px-3 lg:px-5 w-full">
+                            <div className="w-[90vw] sm:w-[45vw] flex items-center justify-center  lg:w-[30vw] ">
+                                <div className="w-11/12">
                                     <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
                                         <img src="./tiktok (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
                                         <div className="text-center space-y-3">
@@ -589,14 +620,14 @@ const Home = () => {
                                             <p className="">(14K followers)</p>
                                             <p className="">Follow our official Tiktok account for insights and updates</p>
                                         </div>
-                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                        <Button text={'Follow'} className={'p-2 px-10'} />
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
-                                <div className=" px-3 lg:px-5 w-full">
+                            <div className="w-[90vw] sm:w-[45vw] flex items-center justify-center  lg:w-[30vw] ">
+                                <div className="w-11/12">
                                     <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
                                         <img src="./instagram (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
                                         <div className="text-center space-y-3">
@@ -604,14 +635,14 @@ const Home = () => {
                                             <p className="">(14K followers)</p>
                                             <p className="">Follow our official Instagram account for insights and updates</p>
                                         </div>
-                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                        <Button text={'Follow'} className={'p-2 px-10'} />
                                     </div>
                                 </div>
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
-                            <div className="w-[100vw] sm:w-[50vw]  lg:w-[30vw] ">
-                                <div className=" px-3 lg:px-5 w-full">
+                            <div className="w-[90vw] sm:w-[45vw] flex items-center justify-center  lg:w-[30vw] ">
+                                <div className="w-11/12">
                                     <div className="rounded-[3rem] px-5 py-10 w-full min-h-[25rem] space-y-3 drop-shadow-xl bg-white border-gray-200 border flex items-center justify-between flex-col">
                                         <img src="./tiktok (1).png" alt="" className="sm:w-24 w-20 h-20 sm:h-24 object-contain" />
                                         <div className="text-center space-y-3">
@@ -619,7 +650,7 @@ const Home = () => {
                                             <p className="">(14K followers)</p>
                                             <p className="">Follow our official Tiktok account for insights and updates</p>
                                         </div>
-                                        <button className='rounded-full p-2 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold px-10'>Follow</button>
+                                        <Button text={'Follow'} className={'p-2 px-10'} />
                                     </div>
                                 </div>
                             </div>
@@ -632,7 +663,7 @@ const Home = () => {
                 <div className="flex-[3] sm:space-y-7 space-y-4">
                     <h3 className="text-2xl sm:text-3xl md:text-5xl bg-gradient-to-r from-[#F33F41] to-[#FEC93E] inline-block text-transparent bg-clip-text">Become <span className="font-bold"> a  Partner</span></h3>
                     <p className="text-[#686868] md:text-xl sm:text-base text-sm leading-[1.6] pb-5">At MR Corporation, we forge powerful partnerships for mutual growth. Join us to unlock a world of opportunities, connecting your grocery store with our savvy deal-seeking community. Elevate your business with us</p>
-                    <button className='rounded-full p-2 px-8 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>Apply Now</button>
+                    <Button text={'Apply Now'} className={'p-2 px-8'} />
                 </div>
             </section>
             <section className='md:py-10 px-10 py-5 bg-[#F5F5F5] text-center'>
@@ -778,7 +809,7 @@ const Home = () => {
                         <p className="w-7 text-left border-t-4 border-[#F33F41]">Video <br /> Ad</p>
                         <p className="w-7 text-left border-t-4 border-[#F33F41]">Visiting card <br /> Ad</p>
                     </div>
-                    <button className='rounded-full p-2 px-8 bg-gradient-to-r from-[#F7A738] to-[#F33F41] text-white sm:text-lg text-sm font-semibold'>View All</button>
+                    <Button text={'View All'} className={'p-2 px-8'} />
                 </div>
             </section>
             <section className=''>
@@ -803,7 +834,9 @@ const Home = () => {
                                 <div key={index} className="faq-item">
                                     <div className="faq-question flex items-center justify-between w-full cursor-pointer" onClick={() => toggleActiveIndex(index)}>
                                         <h4 className="text-xl font-medium leading-[1.4] w-full py-5">{faq.question}</h4>
-                                        {activeIndex === index ? <span>&#9650;</span> : <span>&#9660;</span>}
+                                        <span className={`transition-all ${activeIndex === index ? 'rotate-180' : ''}`}>
+                                            <span>&#9660;</span>
+                                        </span>
                                     </div>
 
                                     {activeIndex === index && (
@@ -818,7 +851,6 @@ const Home = () => {
 
                 </div>
             </section>
-            <Footer />
         </div>
     )
 }
