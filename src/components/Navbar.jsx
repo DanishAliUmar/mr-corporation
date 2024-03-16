@@ -30,9 +30,9 @@ const Navbar = () => {
                     </NavLink>
                 </div>
                 <div className="lg:flex items-center gap-5 hidden">
-                <Svg.Language className='cursor-pointer'/>
-                <Svg.Wallet className='cursor-pointer'/>
-                
+                    <Svg.Language className='cursor-pointer' />
+                    <Svg.Wallet className='cursor-pointer' />
+
                     {/* <img src="./lang.svg" alt="img" className='cursor-pointer' /> */}
                     {/* <img src="./wallet.svg" alt="img" className='cursor-pointer' /> */}
                     <NavLink to="/login">
@@ -46,18 +46,32 @@ const Navbar = () => {
             </div>
             <div className={`absolute w-full bg-white z-[9999] ${openTopMenu ? 'top-0' : '-top-[1000px]'}`}>
                 <div className='flex items-center justify-between xl:px-32 sm:px-16 px-8 pb-5 border-b'>
-                    <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
+                    <NavLink to="/">
+                        <img src='./nav_logo.png' alt="img" className='lg:w-[8.375rem] w-[6rem] cursor-pointer' />
+                    </NavLink>
 
                     <img src="./cross.svg" className='cursor-pointer' alt="cross" onClick={() => setopenTopMenu(!openTopMenu)} />
                 </div>
                 <div className="flex items-center justify-center flex-col gap-8 p-8">
-                    <span className='text-[#EE0003] cursor-pointer font-semibold text-xl'>Home</span>
-                    <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>About</span>
-                    <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Results</span>
-                    <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Partners</span>
-                    <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Contacts</span>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/">
+                        <span className='text-[#EE0003] cursor-pointer font-semibold text-xl'>Home</span>
+                    </NavLink>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/about">
+                        <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>About</span>
+                    </NavLink>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/results">
+                        <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Results</span>
+                    </NavLink>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/partners">
+                        <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Partners</span>
+                    </NavLink>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/contacts">
+                        <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Contacts</span>
+                    </NavLink>
                     <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Language</span>
-                    <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Login</span>
+                    <NavLink onClick={()=> setopenTopMenu(!openTopMenu)} to="/login">
+                        <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Login</span>
+                    </NavLink>
                     <span className='text-[#686868] hover:text-[#EE0003] cursor-pointer font-semibold text-xl'>Coupons</span>
                 </div>
             </div>
